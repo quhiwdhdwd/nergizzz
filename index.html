@@ -1,87 +1,91 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="az">
 <head>
 <meta charset="UTF-8">
-<title>Seni Seviyorum</title>
+<title>Nərgizim 💗</title>
 <style>
 body{
     margin:0;
-    background:linear-gradient(135deg,#ff9ad5,#ffc1e3);
+    background:linear-gradient(135deg,#ff7eb3,#ffc3d9);
     font-family:'Comic Sans MS',cursive;
     text-align:center;
     color:#fff;
 }
-.container{
+.box{
     background:rgba(255,255,255,0.15);
     margin:40px auto;
     width:90%;
-    max-width:500px;
-    padding:25px;
-    border-radius:25px;
-    box-shadow:0 0 25px rgba(255,105,180,0.7);
+    max-width:520px;
+    padding:30px;
+    border-radius:30px;
+    box-shadow:0 0 25px rgba(255,0,130,0.7);
 }
-h1{
-    font-size:36px;
-}
-p{
-    font-size:18px;
-    line-height:1.6;
-}
-.heart{
-    font-size:70px;
-    animation:pulse 1s infinite;
-}
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
-    100%{transform:scale(1);}
-}
+h1{font-size:38px;}
+p{font-size:18px; line-height:1.7;}
+.heart{font-size:75px; animation:pulse 1s infinite;}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.2);}100%{transform:scale(1);}}
 button{
     background:#ff4fa3;
     border:none;
-    padding:12px 25px;
-    border-radius:20px;
+    padding:12px 28px;
+    border-radius:25px;
     color:white;
-    font-size:16px;
+    font-size:17px;
     cursor:pointer;
     box-shadow:0 0 15px rgba(255,0,130,0.8);
 }
-button:hover{
-    background:#ff2b90;
-}
-#secret{
-    display:none;
+button:hover{background:#ff2b90;}
+#secret{display:none;margin-top:18px;font-size:18px;}
+.counter{
     margin-top:15px;
     font-size:18px;
-    color:#fff7fb;
+    background:rgba(255,255,255,0.15);
+    padding:12px;
+    border-radius:15px;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="box">
     <div class="heart">💖</div>
-    <h1>Canım Sevgilim</h1>
+    <h1>Nərgizim</h1>
     <p>
-        Seni tanıdığım gün hayatımın en güzel günü oldu 🥰<br>
-        Gülüşün kalbimi eriten en güzel şey 💕<br>
-        Gözlerin yıldızlardan daha parlak ✨<br><br>
-        **Seni çooook seviyorum 😘**
+        Səni tanıdığım gün həyatım dəyişdi 😍<br>
+        Gülüşün ürəyimin ən sevdiyi musiqidir 🎶<br>
+        Gözlərin gecələrimin ulduzlarıdır ✨<br><br>
+        <b>Səni çooooox sevirəm 💗</b>
     </p>
 
-    <button onclick="showSecret()">Sürprize Tıkla 🎁</button>
+    <div class="counter" id="meetCounter"></div>
+    <div class="counter" id="loveCounter"></div>
+
+    <button onclick="openGift()">Sürprizə toxun 🎁</button>
     <div id="secret">
-        💌 Sen benim en güzel hayalimsin...<br>
-        İyi ki varsın, iyi ki benimsin 💗<br>
-        Sonsuza kadar sen & ben ♾️
+        💌 Nərgiz, sən mənim ən gözəl möcüzəmsən...<br>
+        Hər günümün səbəbi sənsən 💕<br>
+        Sonsuza qədər sən & mən ♾️
     </div>
 </div>
 
 <script>
-function showSecret(){
-    document.getElementById("secret").style.display="block";
+function daysFrom(dateStr){
+    let start=new Date(dateStr);
+    let now=new Date();
+    let diff=Math.floor((now-start)/(1000*60*60*24));
+    return diff;
+}
+
+document.getElementById("meetCounter").innerHTML=
+"📅 Tanış olduğumuz gündən: <b>"+daysFrom("2023-12-15")+" gün</b>";
+
+document.getElementById("loveCounter").innerHTML=
+"💑 Sevgili olduğumuz gündən: <b>"+daysFrom("2023-12-15")+" gün</b>";
+
+function openGift(){
+ document.getElementById("secret").style.display="block";
 }
 </script>
 
 </body>
-</html>
+</html>        
